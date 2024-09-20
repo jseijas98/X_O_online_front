@@ -1,0 +1,10 @@
+<section class="flex-column">
+    <h1 class="italic borde-animado">LA VIEJA <span>ONLINE</span></h1>
+    <p>¡Hola <span>{{usuarioServices.nombre()}}</span>!</p>
+    
+    <div class="flex-column">
+      <button (click)="buscarSalaPublica()" class="boton">Jugar Online</button>
+      <a [routerLink]="['/jugar-privada']" class="boton">Crear sala privada</a>
+      <a [routerLink]="['/cambiar-nombre']" class="boton">Cambiar nombre</a>
+    </div>
+  </section>

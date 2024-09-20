@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@use '../public/colores.scss' as colors;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+
+
+
+body {           // 100% de la altura de la pantalla                  // Elimina márgenes del body
+  background-color: colors.$primary;  // Opcional: fondo de la pantalla
+}
+
+* {
+  font-family: "JetBrains Mono", monospace;
+  color: colors.$primary;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.flex-apart{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.boton {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 1px solid colors.$primary;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  min-width: 240px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: colors.$primary;
+    color: colors.$background;
+  }
+
+  &:disabled {
+    background-color: gray;
+    border-color: gray;
+    color: white;
+    cursor: default;
+    
+    &:hover {
+      background-color: gray;  // Evitar que cambie el color al hover si está deshabilitado
+      color: white;
+    }
+  }
+}
+
+
+@media(width <= 700px){
+  body{
+    margin: 0;
+  }
+}

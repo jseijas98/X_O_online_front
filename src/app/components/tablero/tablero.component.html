@@ -1,0 +1,12 @@
+<section>
+    @for (casilla of casillas; track $index) {
+    <button (click)="jugar(casilla)" [disabled]="!isMyTurn() || salaService.tablero()[casilla] !== ''">
+        <span [ngClass]="{
+              local: salaService.tablero()[casilla] === salaService.numeroDeJugadores(),
+              ganador: salaService.posicionGanadora()?.includes(casilla)
+            }">
+            {{ getMarca(salaService.tablero()[casilla]) }}
+        </span>
+    </button>
+    }
+</section>

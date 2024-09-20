@@ -1,0 +1,56 @@
+@use '../../../../public/colores.scss' as colors;
+
+
+#loader {
+    width: fit-content;
+    font-weight: bold;
+    font-size: 30px;
+    color: #0000;
+    background: linear-gradient(90deg,colors.$accent-2 calc(50% + 0.5ch),colors.$primary 0) right/calc(200% + 1ch) 100%;
+    -webkit-background-clip: text;
+            background-clip: text;
+    animation: l7 3s infinite steps(15);
+  }
+  .loader:before {
+    content:"Esperando jugador..."
+  }
+  @keyframes l7 {to{
+    opacity: 2;
+    background-position: left
+}}
+
+#boton-copiar{
+  width: 20px;
+  padding: 0;
+  aspect-ratio: 1;
+}
+
+#container{
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+}
+
+app-tablero{
+  margin: auto 0;
+}
+
+.botones{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#pie{
+  p{
+    font-size: 14px;
+    text-align: center;
+  }
+  button{
+    // margin-left: 0.5rem;
+    width: 1rem;
+    border: unset;
+    background-color: unset;
+    cursor: pointer;
+  }
+}
