@@ -108,7 +108,6 @@ export class SalasService {
       jugador: this.numeroDeJugadores()!,
       rematch: this.signalRematch()
     }
-    console.log("enviando rematch", args);
     this.serverService.server.emitWithAck("rematch", args).then((res) => {
       // console.log('res rematch', res);
       this.getSalas(res.sala)
