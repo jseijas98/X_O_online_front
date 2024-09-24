@@ -29,7 +29,6 @@ export class JugarComponent implements OnInit,OnDestroy {
 
   ngOnInit() {
 
-
     this.location.replaceState("/jugar");
     if (this.isPrivate() && !this.id()) {
       this.salasServices.crearSala()
@@ -46,25 +45,6 @@ export class JugarComponent implements OnInit,OnDestroy {
   timer = computed(()=> this.salasServices.timer()! / 1000);
 
   tiempo = signal<number|undefined>(undefined);
-
-  // cambiarTime = effect(() => {
-  //   let tiempoRestante = this.salasServices.timer()! / 1000; // convertir a segundos
-  //   if (tiempoRestante > 0) {
-  //   this.tiempo.set(tiempoRestante); // Inicializa la propiedad reactiva
-  //   this.intervalId = setInterval(() => {
-  //     if (tiempoRestante > 0) {
-  //       console.log("Tiempo restante para rematch:", tiempoRestante);
-  //       this.tiempo.set(--tiempoRestante); // Actualiza la propiedad reactiva
-  //     } else {
-  //       clearInterval(this.intervalId);
-  //       console.log("El tiempo para rematch ha terminado.");
-  //       this.tiempo.set(0);
-  //     }
-  //   }, 950); // Actualiza cada segundo
-  //   }
-  // }, { allowSignalWrites: true });
-
-
 
 
   mostrarModal = computed(()=> this.tineModal.includes(this.salasServices.state()));

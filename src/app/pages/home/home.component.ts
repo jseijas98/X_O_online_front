@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
    /** Pregunta al servidor si hay una sála pública disponible */
    buscarSalaPublica(){
     this.serverServices.server.emitWithAck("encontrarSala").then(res => {
-      console.log(res)
+      // console.log(res)
       if(res === null) return this.router.navigate(["/jugar"]);
       return this.router.navigate(["/jugar",res]);
     })

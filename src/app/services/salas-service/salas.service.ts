@@ -15,7 +15,6 @@ export class SalasService {
   router = inject(Router);
 
   constructor() {
-
     this.serverService.upateSala$.subscribe((salas) => {
       this.getSalas(salas);
     })
@@ -37,7 +36,7 @@ export class SalasService {
 
   getSalas(salas: SalaBackend) {
     if (!salas) this.router.navigate(["/"]);
-    if (salas.estado === "CANCELADA"||!salas.estado) this.router.navigate(["/"]);
+    if (salas.estado === "CANCELADA"||!salas?.estado) this.router.navigate(["/"]);
     if(salas.rematchAvailable)this.revancha()
     if(salas.rematch)this.signalRematch.set(undefined)
     this.state.set(salas.estado);
